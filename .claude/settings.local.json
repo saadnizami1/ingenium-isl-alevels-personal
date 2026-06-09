@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node -e \"try{require\\('vite-plugin-imagemin'\\);console.log\\('ok'\\)}catch\\(e\\){console.log\\('failed:',e.message\\)}\")",
+      "Bash(npx vite *)"
+    ]
+  }
+}

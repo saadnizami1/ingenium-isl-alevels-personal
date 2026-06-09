@@ -1,0 +1,160 @@
+:root {
+  --bg: #080006;
+  --bg-2: #0d000b;
+  --purple: #2d0a3e;
+  --magenta: #8b006e;
+  --gold: #f5a623;
+  --gold-light: #ffd07a;
+  --gold-dim: rgba(245, 166, 35, 0.15);
+  --white: #ffffff;
+  --gray: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-gold: rgba(245, 166, 35, 0.25);
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  cursor: none;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 2px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  body { cursor: auto; }
+  button { cursor: pointer; }
+
+  /* General */
+  .resp-section { padding: 4rem 1.25rem 6rem !important; }
+  .resp-section-top { padding-top: 4rem !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .resp-pad { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+  /* Grids */
+  .resp-grid-2 { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .resp-grid-500 { grid-template-columns: 1fr !important; }
+
+  /* Events */
+  .resp-event-row { grid-template-columns: 1fr !important; }
+  .resp-event-date { display: none !important; }
+  .resp-events-section { padding: 3rem 1.25rem 7rem !important; }
+
+  /* Newsletter */
+  .resp-newsletter-row { grid-template-columns: 1fr !important; gap: 0.75rem !important; padding: 1.75rem 1.25rem !important; }
+  .resp-newsletter-read { display: none !important; }
+  .resp-subscribe { grid-template-columns: 1fr !important; gap: 1.5rem !important; padding: 2rem 1.25rem !important; }
+  .resp-subscribe-form { flex-direction: column !important; }
+  .resp-subscribe-form input { border-right: 1px solid var(--border) !important; border-bottom: none !important; }
+
+  /* Navbar */
+  .nav-links { display: none !important; }
+  .hamburger { display: flex !important; }
+
+  /* Footer */
+  .resp-footer-main { flex-direction: column !important; gap: 1.5rem !important; padding: 2rem 1.25rem !important; }
+  .resp-footer-nav { gap: 0.75rem 1.5rem !important; }
+  .resp-footer-bottom { padding: 1rem 1.25rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; }
+
+  /* Hero */
+  .resp-hero-buttons { flex-direction: column !important; align-items: stretch !important; }
+  .resp-hero-buttons a { text-align: center !important; }
+
+  /* Tabs */
+  .resp-tabs { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; margin-bottom: 3rem !important; }
+  .resp-tabs::-webkit-scrollbar { display: none; }
+  .resp-tabs button { padding: 1rem 1.25rem !important; font-size: 0.65rem !important; }
+
+  /* Alumni */
+  .resp-alumni-row { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .resp-alumni-photo { max-width: 220px !important; margin: 0 auto !important; }
+
+  /* About the dev */
+  .resp-2col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* Home tagline */
+  .resp-tagline { padding: 4rem 1.25rem 5rem !important; }
+  .resp-tagline-right { justify-content: flex-start !important; }
+
+  /* Essay reader */
+  .resp-essay-toolbar { padding: 0.6rem 1rem !important; gap: 0.75rem !important; }
+  .resp-essay-toolbar-back { display: none !important; }
+  .resp-essay-article { padding: 2.5rem 1.25rem 5rem !important; }
+
+  /* Countdown */
+  .resp-countdown { padding: 1rem 1rem 3rem !important; }
+  .resp-countdown-unit { padding: 0 clamp(0.4rem, 2vw, 1.2rem) !important; }
+
+  /* Sponsors */
+  .resp-sponsors-tier { grid-template-columns: 1fr !important; }
+
+  /* Page headers */
+  .resp-page-header { height: 45vh !important; }
+}
+
+@media (max-width: 900px) {
+  .resp-grid-2 { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .resp-alumni-row { grid-template-columns: 1fr !important; gap: 2rem !important; }
+}
+
+@media (min-width: 769px) {
+  .hamburger { display: none !important; }
+  .nav-mobile-menu { display: none !important; }
+}
+
+.nav-mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 0, 6, 0.97);
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
