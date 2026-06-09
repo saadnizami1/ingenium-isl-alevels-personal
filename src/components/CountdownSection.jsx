@@ -160,7 +160,7 @@ export default function CountdownSection() {
         style={{ display: 'inline-block', position: 'relative' }}
       >
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSd5nF3o_jyTuPtrI_F4WBUpIEaibtNp2ti4Rue0aZ0nOwgiA/viewform"
+          href="https://form.typeform.com/to/zxN5VbZa"
           target="_blank"
           rel="noopener noreferrer"
           style={{

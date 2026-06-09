@@ -108,7 +108,7 @@ export default function Home() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.6rem)', lineHeight: 1.2, letterSpacing: '0.02em', maxWidth: 860, color: 'rgba(255,255,255,0.85)' }}
         >
-         ISL Science Society brings together students who treat science as more than a subject. We represent Pakistan on international stages, run one of the country's biggest student STEM competitions, and document it all along the way.
+         The ISL Science Society represents Pakistan at international science olympiads and hosts Ingenium, one of the country’s largest student STEM competitions.
         </motion.h2>
         <div className="resp-tagline-right" style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <motion.div

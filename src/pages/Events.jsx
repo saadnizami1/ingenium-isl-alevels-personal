@@ -14,15 +14,15 @@ const categories = [
         date: '28-30 August 2026',
         status: 'Open',
         desc: 'ISL\'s flagship science event. 10+ competition categories, 30+ schools, and delegates from across the country — sponsored by Pakistan\'s largest organizations and run and mentored by some of Pakistan\'s most distinguished STEM personalities.',
-        registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdnF3o_jyTuPtrfI_F4WBUpIEaibtNp2ti4Rue0aZ0nOwgiA/viewform',
+        registerUrl: 'https://form.typeform.com/to/zxN5VbZa',
       },
     ],
   },
   {
     id: 'competitions',
     label: 'Competitions',
-    desc: 'Compete. Win. Repeat.',
-    subdesc: 'Only for the local student body of ISL Ring Road.',
+    desc: '',
+    subdesc: 'Note: This section is for ISL RR students only.',
     footnote: 'Contact STEM Presidents for more details and registration.',
     events: [
       { name: 'NUST NERC', date: 'Jul 2026', status: 'Upcoming', desc: '' },

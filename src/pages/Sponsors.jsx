@@ -63,7 +63,7 @@ export default function Sponsors() {
                 fontSize: '0.6rem',
                 letterSpacing: '0.28em',
                 textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.25)',
+                color: 'rgba(255,255,255,0.7)',
                 marginBottom: '1.25rem',
               }}>
                 {tier.label}

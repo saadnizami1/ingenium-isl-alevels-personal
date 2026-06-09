@@ -15,37 +15,36 @@ export default function About() {
       <PageHeader title="ABOUT US" sub="STEM @ ISL" bg={bg} />
 
       <section className="resp-section" style={{ padding: '9rem 3rem', maxWidth: 1300, margin: '0 auto' }}>
-        <div className="resp-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 5.5rem)', lineHeight: 0.95, marginBottom: '2.5rem' }}
-            >
-              CURIOUS BY NATURE
-
-            </motion.h2>
-            {[
-              'Some school clubs meet once a week and call it a day. ISL Science Society competes on the world stage. We compete at the IBO, IOAA, IYPT, IYBT, and USACO, and we\'ve got the results to show for it: national victories at the Pakistan Young Physicists\' Tournament and multiple Best Delegation awards at LUMS PSIFI.',
-              'Once a year, the Science, Math, CS, Robotics, and Astronomy societies come together to run ISL Ingenium: a three-day interschool STEM competition that brings together the strongest student scientists in the country. Research challenges, rigorous problem-solving, hands-on work. It\'s grown into one of the most respected events on Pakistan\'s national STEM calendar.',
-              'We also publish Magnum Opus, a digital magazine covering the Society\'s work and the broader world of science, both in Pakistan and globally. Think less school newsletter, more actual journalism.',
-            ].map((p, i) => (
-              <motion.p key={i}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.15, duration: 0.7 }}
-                style={{ color: 'var(--gray)', lineHeight: 1.9, fontSize: '1rem', marginBottom: '1.5rem' }}
-              >{p}</motion.p>
-            ))}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-          >
-            <img src={logo} alt="Ingenium Logo" style={{ width: '75%', maxWidth: 320, mixBlendMode: 'screen', filter: 'drop-shadow(0 0 80px rgba(245,166,35,0.4))' }} />
-          </motion.div>
-        </div>
-      </section>
+  <div className="resp-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
+    <div>
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 5.5rem)', lineHeight: 0.95, marginBottom: '2.5rem' }}
+      >
+        EXORIEMUR EX CINERIBUS
+      </motion.h2>
+      {[
+        'The ISL Science Society is International School Lahore\'s centre for scientific ambition, where students compete, build, and push the boundaries of what school-level science looks like in Pakistan. Representing Pakistan in some of the world\'s most demanding student olympiads — the IBO, IOAA, IYPT, IYBT, and USACO — the Society has earned its place on the national stage, with victories at the Pakistan Young Physicists\' Tournament nationals and multiple Best Delegation awards at LUMS PSIFI.',
+        'At the heart of the Society sits ISL Ingenium, a three-day interschool national STEM competition that brings together Pakistan\'s top student scientists for challenges spanning research, problem-solving, and hands-on application.',
+        'The Society also publishes Magnum Opus, a digital magazine that chronicles the Society\'s achievements alongside the latest breakthroughs in Pakistani and global science.',
+      ].map((p, i) => (
+        <motion.p key={i}
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ delay: 0.2 + i * 0.15, duration: 0.7 }}
+          style={{ color: 'var(--gray)', lineHeight: 1.9, fontSize: '1rem', marginBottom: '1.5rem' }}
+        >{p}</motion.p>
+      ))}
+    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    >
+      <img src={logo} alt="Ingenium Logo" style={{ width: '75%', maxWidth: 320, mixBlendMode: 'screen', filter: 'drop-shadow(0 0 80px rgba(245,166,35,0.4))' }} />
+    </motion.div>
+  </div>
+</section>
 
       <section className="resp-section" style={{ padding: '6rem 3rem 12rem' }}>
         <div style={{ maxWidth: 1300, margin: '0 auto' }}>

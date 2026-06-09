@@ -57,7 +57,7 @@ const alumni = [
     name: 'Zenab Ayub',
     role: 'President, ISL Science Society',
     year: '2023–24',
-    bio: 'Zenab took the helm having already made her mark on the national circuit by winning ARSSDC in 2023. As President, she spearheaded ISL Magnus as its Event Head, driving the competition that would later evolve into ISL Ingenium. She is now studying at the University of London.',
+    bio: 'Zenab took the helm having already made her mark on the national circuit by winning ARSSDC in 2023. As President, she spearheaded ISL Magnus as its Event Head, driving the competition that would later evolve into ISL Ingenium. She is studying Medicine at the University of Liverpool.',
     img: zenabImg,
   },
 ]
@@ -65,7 +65,7 @@ const alumni = [
 export default function Alumni() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-      <PageHeader title="ALUMNI" sub="Those Who Built This" bg={bg} />
+      <PageHeader title="ALUMNI" sub="6 years of legacy: ISL Science Society" bg={bg} />
 
       <section style={{
         padding: 'clamp(5rem, 8vw, 8rem) clamp(1rem, 4vw, 3rem) clamp(8rem, 12vw, 12rem)',

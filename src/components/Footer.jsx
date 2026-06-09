@@ -62,7 +62,7 @@ export default function Footer() {
           <img src={logo} alt="Ingenium" style={{ width: 32, mixBlendMode: 'screen' }} />
           <span style={{ fontFamily: 'var(--font-heading)', fontSize: '0.75rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Ingenium</span>
           <span style={{ color: 'rgba(255,255,255,0.1)', fontSize: '0.7rem', margin: '0 0.25rem' }}>—</span>
-          <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>ISL's Science Society</span>
+          <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>ISL Science Society</span>
         </div>
 
         {/* Nav links */}
@@ -93,9 +93,9 @@ export default function Footer() {
         {/* Dev credit */}
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'rgba(255,255,255,0.2)' }}>
           © {new Date().getFullYear()} Ingenium · Developed by{' '}
-          <Link to="/about-the-dev" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-            onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
-            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}
+          <Link to="/about-the-dev" style={{ color: 'var(--gold)', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(245,166,35,0.45)', transition: 'color 0.2s, text-decoration-color 0.2s' }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold-light)'; e.currentTarget.style.textDecorationColor = 'rgba(245,166,35,0.9)' }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'var(--gold)'; e.currentTarget.style.textDecorationColor = 'rgba(245,166,35,0.45)' }}
           >Saad Nizami</Link>
         </p>
 
