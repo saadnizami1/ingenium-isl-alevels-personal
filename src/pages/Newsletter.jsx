@@ -88,7 +88,7 @@ function SubscribeForm() {
           </motion.p>
         ) : (
           <motion.div key="form" initial={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-            <div style={{ display: 'flex' }}>
+            <div className="resp-subscribe-row" style={{ display: 'flex' }}>
               <input
                 type="email"
                 placeholder="your@email.com"

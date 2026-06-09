@@ -108,10 +108,11 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.3 }}
               >
-                <Link to={l.path} style={{
+                <Link to={l.path} className="nav-mobile-link" style={{
                   fontFamily: 'var(--font-display)', fontSize: '2.8rem',
                   letterSpacing: '0.1em', textTransform: 'uppercase',
                   color: location.pathname === l.path ? 'var(--gold)' : 'var(--white)',
+                  display: 'block', textAlign: 'center',
                 }}>
                   {l.label}
                 </Link>
