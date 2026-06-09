@@ -6,6 +6,10 @@ export default function CustomCursor() {
   const [hovering, setHovering] = useState(false)
   const [visible, setVisible] = useState(false)
 
+  // Touch/stylus devices have no mouse — skip the cursor entirely
+  const isTouchOnly = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  if (isTouchOnly) return null
+
   useEffect(() => {
     const move = (e) => {
       setMouse({ x: e.clientX, y: e.clientY })
