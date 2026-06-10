@@ -80,7 +80,7 @@ export default function Home() {
               fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase',
               clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)',
             }}>
-              Explore Events
+              Register Now
             </Link>
             <Link to="/about" style={{
               padding: '1rem 2.75rem',

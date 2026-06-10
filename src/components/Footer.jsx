@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 const nav = [
   ['Home', '/'],
   ['About', '/about'],
-  ['Events', '/events'],
+  ['Register', '/events'],
   ['Executive Council', '/science-ec'],
   ['Sponsors', '/sponsors'],
   ['Newsletter', '/newsletter'],

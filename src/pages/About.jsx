@@ -25,7 +25,7 @@ export default function About() {
         EXORIEMUR EX CINERIBUS
       </motion.h2>
       {[
-        'The ISL Science Society is International School Lahore\'s centre for scientific ambition, where students compete, build, and push the boundaries of what school-level science looks like in Pakistan. Representing Pakistan in some of the world\'s most demanding student olympiads — the IBO, IOAA, IYPT, IYBT, and USACO — the Society has earned its place on the national stage, with victories at the Pakistan Young Physicists\' Tournament nationals and multiple Best Delegation awards at LUMS PSIFI.',
+        'The ISL Science Society is International School Lahore\'s centre for scientific ambition, where students compete, build, and push the boundaries of what school-level science looks like in Pakistan. Representing Pakistan in some of the world\'s most demanding student olympiads — the IBO, IOAA and IYPT — the Society has earned its place on the national stage, with victories at the Pakistan Young Physicists\' Tournament nationals and multiple Best Delegation awards at LUMS PSIFI.',
         'At the heart of the Society sits ISL Ingenium, a three-day interschool national STEM competition that brings together Pakistan\'s top student scientists for challenges spanning research, problem-solving, and hands-on application.',
         'The Society also publishes Magnum Opus, a digital magazine that chronicles the Society\'s achievements alongside the latest breakthroughs in Pakistani and global science.',
       ].map((p, i) => (
