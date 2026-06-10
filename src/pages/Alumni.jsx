@@ -8,6 +8,7 @@ import arhamImg from '../assets/alumni/arham.png'
 import nasikImg from '../assets/alumni/nasik.png'
 import mubeenImg from '../assets/alumni/mubee.png'
 import husImg from '../assets/alumni/hus.png'
+import burrImg from '../assets/alumni/burr.png'
 const alumni = [
   {
     name: 'Hassan Atif Cheema',
@@ -16,12 +17,20 @@ const alumni = [
     bio: 'One of the most accomplished tenures in the Society\'s history. Hassan led the Society to Best Delegation at LUMS PSIFI, ending a four year wait. A dominant force in biology, he earned the Outstanding Cambridge Learner Award in O Level Biology, won the IYBT, reached the national camp for IYPT, and represented Pakistan at the International Biology Olympiad 2026 in Vilnius, Lithuania.',
     img: hassanImg,
   },
-  {
-    name: 'Muhammad Nasik Tariq',
-    role: 'President, ISL Science Society',
+{
+  name: 'Muhammad Nasik Tariq',
+  role: 'President, ISL Science Society',
+  year: '2025–26',
+  bio: 'Nasik\'s tenure was the one the Society had been building toward. He led ISL to victory at the Pakistan Young Physicists\' Tournament nationals, won the IYBT as a competitor, and built a crop analyzer that won the Global Innovations Award at the London School of Economics. All of that led to the moment that defined his presidency: Best Delegation at LUMS PSIFI, ending four years of near misses.',
+  img: nasikImg,
+},
+   {
+    name: 'Muhammad Raffay',
+    role: 'President, ISL Robotics Society',
     year: '2025–26',
-    bio: 'Nasik led the Society through one of its most decorated years, claiming victory at the Pakistan Young Physicists\' Tournament nationals and winning the IYBT. His crowning achievement came at LUMS PSIFI where he delivered Best Delegation, ending four years of waiting and redefining what the Science Society could achieve on the national stage.',
-    img: nasikImg,
+    bio: 'Known across ISL’s STEM societies as Burr. Alongside Sir Adil, he rebuilt the school’s robotics program from a small interest group into the strongest ISL has ever fielded, all while serving as Secretary General of ISL Ingenium ’25. BurrWars is named after him. The culture he built is the one every robotics lead now inherits.',
+
+    img: burrImg,
   },
   {
     name: 'Arham Ijaz Munir',

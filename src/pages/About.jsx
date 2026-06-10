@@ -2,12 +2,6 @@ import { motion } from 'framer-motion'
 import bg from '../assets/bg.png'
 import logo from '../assets/logo.png'
 
-const values = [
-  { title: 'Curiosity', desc: '"The important thing is not to stop questioning." ~ Einstein' },
-  { title: 'Innovation', desc: '"If it works, it\'s obsolete."    ~ Marshall McLuhan' },
-  { title: 'Community', desc: '"No man is an island." ~ John Donne' },
-  { title: 'Excellence', desc: '"Good is the enemy of great." ~ Voltaire' },
-]
 
 export default function About() {
   return (
@@ -46,27 +40,33 @@ export default function About() {
   </div>
 </section>
 
-      <section className="resp-section" style={{ padding: '6rem 3rem 12rem' }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto' }}>
-          <motion.p
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            style={{ fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '4rem' }}
+      <section className="resp-section" style={{ padding: '2rem 3rem 12rem' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <motion.blockquote
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            style={{ borderLeft: '2px solid rgba(245,166,35,0.35)', paddingLeft: 'clamp(1.5rem, 4vw, 3rem)', margin: 0 }}
           >
-            Our Values
-          </motion.p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5px', background: 'var(--border)' }}>
-            {values.map((v, i) => (
-              <motion.div key={v.title}
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.7 }}
-                whileHover={{ background: 'rgba(245,166,35,0.04)' }}
-                style={{ padding: '3.5rem 3rem', background: 'var(--bg)', transition: 'background 0.3s' }}
-              >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', letterSpacing: '0.04em', marginBottom: '1.25rem' }}>{v.title}</h3>
-                <p style={{ color: 'var(--gray)', lineHeight: 1.7, fontSize: '0.9rem' }}>{v.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+            <p style={{
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+              lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.65)',
+              marginBottom: '1.5rem',
+            }}>
+              "I… seem to have been only like a boy playing on the sea-shore… whilst the great ocean of truth lay all undiscovered before me."
+            </p>
+            <p style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '0.65rem',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              color: 'var(--gold)',
+            }}>
+              — Isaac Newton
+            </p>
+          </motion.blockquote>
         </div>
       </section>
     </motion.div>
