@@ -9,6 +9,7 @@ import nasikImg from '../assets/alumni/nasik.png'
 import mubeenImg from '../assets/alumni/mubee.png'
 import husImg from '../assets/alumni/hus.png'
 import burrImg from '../assets/alumni/burr.png'
+import ateebImg from '../assets/alumni/ateeb.png'
 const alumni = [
   {
     name: 'Hassan Atif Cheema',
@@ -24,6 +25,13 @@ const alumni = [
   bio: 'Nasik\'s tenure was the one the Society had been building toward. He led ISL to victory at the Pakistan Young Physicists\' Tournament nationals, won the IYBT as a competitor, and built a crop analyzer that won the Global Innovations Award at the London School of Economics. All of that led to the moment that defined his presidency: Best Delegation at LUMS PSIFI, ending four years of near misses.',
   img: nasikImg,
 },
+  {
+    name: 'Ateeb Sohail',
+    role: 'President, ISL CS Society',
+    year: '2025–26',
+    bio: 'Under Ateeb\'s leadership, the ISL CS Society accelerated at an unprecedented pace. He steered the team through a flawless regional circle, ensuring the Society secured an award in every single competition they entered. Beyond the digital realm, he served as an Event President for ISL Ingenium, leaving a lasting legacy on the broader STEM culture at ISL.',
+    img: ateebImg,
+  },
    {
     name: 'Muhammad Raffay',
     role: 'President, ISL Robotics Society',
@@ -105,6 +113,7 @@ export default function Alumni() {
                 display: 'flex',
                 alignItems: 'flex-end',
                 justifyContent: 'center',
+                height: 'clamp(220px, 40vw, 420px)',
               }}>
                 <div style={{
                   position: 'absolute',
@@ -125,11 +134,13 @@ export default function Alumni() {
                     position: 'relative',
                     zIndex: 1,
                     width: '100%',
-                    maxHeight: 'clamp(220px, 40vw, 420px)',
+                    height: '100%',
                     objectFit: 'contain',
-                    objectPosition: 'bottom',
+                    objectPosition: 'bottom center',
                     display: 'block',
                     filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, black 86%, transparent 100%)',
                   }}
                 />
               </div>

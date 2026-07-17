@@ -1,5 +1,10 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import bg from '../assets/bg.png'
+
+// Auto-loads every image dropped into src/assets/register/ — no code changes needed
+const slideModules = import.meta.glob('../assets/register/*.{png,jpg,jpeg,webp,gif,PNG,JPG,JPEG,WEBP}', { eager: true })
+const slides = Object.keys(slideModules).sort().map((k) => slideModules[k].default)
 
 const event = {
   name: 'INGENIUM',
@@ -80,8 +85,8 @@ function PageHeader({ title, sub, bg: bgSrc }) {
   return (
     <section style={{ position: 'relative', height: '60vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0 }}>
-        <img src={bgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(8,0,6,0.5) 0%, var(--bg) 100%)' }} />
+        <HeaderSlideshow images={slides.length ? slides : [bgSrc]} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(8,0,6,0.25) 0%, rgba(8,0,6,0.35) 55%, var(--bg) 100%)' }} />
       </div>
       <div className="resp-pad" style={{ position: 'relative', zIndex: 1, padding: '0 3rem 4rem', maxWidth: 1300, width: '100%', margin: '0 auto' }}>
         <motion.p initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
@@ -90,5 +95,37 @@ function PageHeader({ title, sub, bg: bgSrc }) {
           style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4rem, 11vw, 11rem)', lineHeight: 0.88, letterSpacing: '0.02em' }}>{title}</motion.h1>
       </div>
     </section>
+  )
+}
+
+function HeaderSlideshow({ images }) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length < 2) return
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 5000)
+    return () => clearInterval(id)
+  }, [images.length])
+
+  return (
+    <div style={{ position: 'absolute', inset: 0 }}>
+      {images.map((src, i) => (
+        <motion.img
+          key={src}
+          src={src}
+          alt=""
+          initial={false}
+          animate={{
+            opacity: i === index ? 0.7 : 0,
+            scale: i === index ? 1.08 : 1,
+          }}
+          transition={{
+            opacity: { duration: 1.4, ease: 'easeInOut' },
+            scale: { duration: 6, ease: 'linear' },
+          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      ))}
+    </div>
   )
 }
