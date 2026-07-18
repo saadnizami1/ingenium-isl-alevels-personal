@@ -16,7 +16,7 @@ const alumni = [
     name: 'Hassan Atif Cheema',
     role: 'President, ISL Science Society',
     year: '2025–26',
-    bio: 'One of the most accomplished tenures in the Society\'s history. Hassan led the Society to Best Delegation at LUMS PSIFI, ending a four year wait. A dominant force in biology, he earned the Outstanding Cambridge Learner Award in O Level Biology, won the IYBT, reached the national camp for IYPT, and represented Pakistan at the International Biology Olympiad 2026 in Vilnius, Lithuania.',
+    bio: 'One of the most accomplished tenures in the Society\'s history. Hassan led the Society to Best Delegation at LUMS PSIFI, ending a four year wait. A dominant force in biology, he earned the Outstanding Cambridge Learner Award in O Level Biology, won the IYBT, reached the national camp for IYPT, and represented Pakistan at the International Biology Olympiad 2026 in Vilnius, Lithuania where he won a Silver Medal.',
     img: hassanImg,
   },
 {
