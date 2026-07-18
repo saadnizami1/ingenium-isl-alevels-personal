@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import bg from '../assets/bg.png'
 
@@ -189,12 +190,71 @@ export default function Alumni() {
 }
 
 function PageHeader({ title, sub, bg: bgSrc }) {
+  const videoRef = useRef(null)
+  const [muted, setMuted] = useState(false)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = false
+    const attempt = v.play()
+    if (attempt) {
+      attempt.catch(() => {
+        // Browser blocked audible autoplay — play muted, let the user unmute
+        v.muted = true
+        setMuted(true)
+        v.play().catch(() => {})
+      })
+    }
+  }, [])
+
+  const toggleSound = () => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = !v.muted
+    setMuted(v.muted)
+    if (v.paused) v.play().catch(() => {})
+  }
+
   return (
     <section style={{ position: 'relative', height: '60vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0 }}>
-        <img src={bgSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(8,0,6,0.5) 0%, var(--bg) 100%)' }} />
+        {/* Fallback image shown until the video loads */}
+        <img src={bgSrc} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
+        <video
+          ref={videoRef}
+          src="/videos/hassanatifibosilver.mp4"
+          loop
+          playsInline
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(8,0,6,0.25) 0%, rgba(8,0,6,0.35) 55%, var(--bg) 100%)' }} />
       </div>
+      <button
+        onClick={toggleSound}
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        style={{
+          position: 'absolute',
+          bottom: '0.9rem',
+          right: '0.9rem',
+          zIndex: 2,
+          width: 28,
+          height: 28,
+          borderRadius: '50%',
+          background: 'rgba(8,0,6,0.45)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          fontSize: '0.7rem',
+          lineHeight: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: 0,
+          opacity: 0.6,
+          cursor: 'pointer',
+        }}
+      >
+        {muted ? '🔇' : '🔊'}
+      </button>
       <div style={{ position: 'relative', zIndex: 1, padding: '0 clamp(1rem, 4vw, 3rem) 4rem', maxWidth: 1300, width: '100%', margin: '0 auto' }}>
         <motion.p initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
           style={{ fontFamily: 'var(--font-heading)', fontSize: '0.7rem', letterSpacing: '0.3em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '1rem' }}>
@@ -208,3 +268,4 @@ function PageHeader({ title, sub, bg: bgSrc }) {
     </section>
   )
 }
+
