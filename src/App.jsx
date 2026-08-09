@@ -6,6 +6,8 @@ import CustomCursor from './components/CustomCursor'
 import Home from './pages/Home'
 import About from './pages/About'
 import Events from './pages/Events'
+import Categories from './pages/Categories'
+import CategoryGuide from './pages/CategoryGuide'
 import ScienceEc from './pages/ScienceEc'
 import Newsletter from './pages/Newsletter'
 import Sponsors from './pages/Sponsors'
@@ -25,6 +27,8 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories/:slug" element={<CategoryGuide />} />
         <Route path="/science-ec" element={<ScienceEc />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sponsors" element={<Sponsors />} />

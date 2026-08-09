@@ -6,6 +6,7 @@ import logo from '../assets/logo.png'
 const links = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
+  { label: 'Categories', path: '/categories' },
   { label: 'Register', path: '/events' },
   { label: 'Executive Council', path: '/science-ec' },
   { label: 'Sponsors', path: '/sponsors' },

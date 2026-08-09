@@ -137,6 +137,15 @@ img {
 
   /* Page headers */
   .resp-page-header { height: 45vh !important; }
+
+  /* Categories */
+  .resp-cat-head { flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
+
+  /* Category study guide */
+  .resp-guide-toolbar { top: 64px !important; padding: 0.65rem 1.25rem !important; }
+  .resp-guide-toolbar-title { display: none !important; }
+  .resp-guide-pdf { height: 70vh !important; }
+  .resp-guide-nav { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 900px) {
