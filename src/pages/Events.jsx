@@ -8,7 +8,7 @@ const slides = Object.keys(slideModules).sort().map((k) => slideModules[k].defau
 
 const event = {
   name: 'INGENIUM',
-  date: '28-30 August 2026',
+  date: '4-6 September 2026',
   desc: 'ISL\'s flagship science event. 10+ competition categories, 30+ schools, and delegates from across the country — sponsored by Pakistan\'s largest organizations and run and mentored by some of Pakistan\'s most distinguished STEM personalities.',
   registerUrl: 'https://form.typeform.com/to/zxN5VbZa',
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const TARGET_DATE = new Date('2026-08-28T00:00:00')
+const TARGET_DATE = new Date('2026-09-04T00:00:00')
 
 function pad(n) { return String(n).padStart(2, '0') }
 
