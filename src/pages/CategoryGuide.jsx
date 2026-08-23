@@ -162,7 +162,7 @@ function GuideContent({ cat }) {
       {/* Action bar */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '2.5rem' }}>
         <a href={cat.pdf} download={fileName} style={goldBtn}>Download PDF ↓</a>
-        <a href={cat.pdf} target="_blank" rel="noopener noreferrer" style={ghostBtn}>Open original ↗</a>
+        <a href={cat.pdf} target="_blank" rel="noopener noreferrer" style={ghostBtn}>Open PDF ↗</a>
       </div>
 
       {/* Rendered guide */}
