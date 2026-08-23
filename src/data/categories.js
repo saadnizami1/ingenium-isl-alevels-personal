@@ -2,15 +2,19 @@
 // Single source of truth for the Ingenium competition categories.
 // Used by both the Categories grid and the per-category Study Guide pages.
 //
-// TO ADD A STUDY GUIDE LATER: drop a PDF into  src/assets/study-guides/
-// named after the category's `slug` (e.g. `malpighis-manifestation.pdf`).
-// It is detected automatically — no code changes needed. A leading number
-// prefix like `01-malpighis-manifestation.pdf` also works.
+// TO ADD A STUDY GUIDE:
+//   1. Drop the PDF in  public/study-guides/<slug>.pdf  (slug = the category's
+//      `slug` below, e.g. `civil-symposium.pdf`).
+//   2. Run  `python scripts/build_guide_content.py`  to regenerate
+//      src/data/guideContent.json (extracts the text verbatim).
+//   3. Rebuild. The category page flips from "coming soon" to the rendered
+//      guide, with a "Download PDF" button pointing at the file in step 1.
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Auto-load emblems and (optional) study-guide PDFs.
+import guideContent from './guideContent.json'
+
+// Auto-load emblems.
 const emblemModules = import.meta.glob('../assets/categories/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG}', { eager: true })
-const guideModules = import.meta.glob('../assets/study-guides/*.{pdf,PDF}', { eager: true })
 
 // Normalise a file path to a bare slug: strip folder, extension, and any
 // leading `NN-` / `NN_` numeric prefix, then lowercase.
@@ -19,16 +23,10 @@ function baseSlug(path) {
   return file.replace(/^\d+[-_]/, '').toLowerCase()
 }
 
-function mapBySlug(modules) {
-  const out = {}
-  for (const [path, mod] of Object.entries(modules)) {
-    out[baseSlug(path)] = mod.default ?? mod
-  }
-  return out
+const emblemBySlug = {}
+for (const [path, mod] of Object.entries(emblemModules)) {
+  emblemBySlug[baseSlug(path)] = mod.default ?? mod
 }
-
-const emblemBySlug = mapBySlug(emblemModules)
-const guideBySlug = mapBySlug(guideModules)
 
 const raw = [
   {
@@ -125,12 +123,17 @@ const raw = [
   },
 ]
 
-// Attach emblem + study-guide URL (matched by slug) to each category.
-export const categories = raw.map((c) => ({
-  ...c,
-  emblem: emblemBySlug[c.slug] || null,
-  guide: guideBySlug[c.slug] || null,
-}))
+// Attach emblem, rendered study-guide content, and the downloadable PDF URL.
+export const categories = raw.map((c) => {
+  const content = guideContent[c.slug]?.blocks || null
+  return {
+    ...c,
+    emblem: emblemBySlug[c.slug] || null,
+    content,                                        // structured blocks, or null
+    pdf: content ? `/study-guides/${c.slug}.pdf` : null,
+    hasGuide: !!content,
+  }
+})
 
 export function getCategory(slug) {
   return categories.find((c) => c.slug === slug) || null

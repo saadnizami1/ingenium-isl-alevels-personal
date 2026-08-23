@@ -95,9 +95,9 @@ export default function CategoryGuide() {
       </section>
 
       {/* ─── Study guide body ─── */}
-      <section className="resp-section" style={{ padding: '2rem 1.5rem 6rem', maxWidth: 1000, margin: '0 auto' }}>
+      <section className="resp-section" style={{ padding: '2rem 1.5rem 6rem', maxWidth: 820, margin: '0 auto' }}>
         <SectionLabel>Study Guide</SectionLabel>
-        {cat.guide ? <GuideViewer cat={cat} /> : <ComingSoon cat={cat} />}
+        {cat.content ? <GuideContent cat={cat} /> : <ComingSoon cat={cat} />}
       </section>
 
       {/* ─── Prev / Next ─── */}
@@ -124,33 +124,106 @@ function SectionLabel({ children }) {
   )
 }
 
-function GuideViewer({ cat }) {
+// Group consecutive list items into a single list block for clean rendering.
+function groupBlocks(blocks) {
+  const out = []
+  for (const b of blocks) {
+    if (b.t === 'li') {
+      const last = out[out.length - 1]
+      if (last && last.t === 'ul') last.items.push(b.text)
+      else out.push({ t: 'ul', items: [b.text] })
+    } else {
+      out.push(b)
+    }
+  }
+  return out
+}
+
+// Turn bare URLs in a string into clickable links.
+const URL_RE = /(https?:\/\/[^\s]+)/g
+function linkify(text) {
+  const parts = text.split(URL_RE)
+  return parts.map((part, i) =>
+    URL_RE.test(part)
+      ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>
+      : part
+  )
+}
+
+function GuideContent({ cat }) {
+  const grouped = groupBlocks(cat.content)
   const fileName = `${cat.slug}-study-guide.pdf`
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       {/* Action bar */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'flex-end', marginBottom: '1rem' }}>
-        <a href={cat.guide} target="_blank" rel="noopener noreferrer" style={ghostBtn}>Open in new tab ↗</a>
-        <a href={cat.guide} download={fileName} style={goldBtn}>Download PDF ↓</a>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '2.5rem' }}>
+        <a href={cat.pdf} download={fileName} style={goldBtn}>Download PDF ↓</a>
+        <a href={cat.pdf} target="_blank" rel="noopener noreferrer" style={ghostBtn}>Open original ↗</a>
       </div>
 
-      {/* Embedded viewer */}
-      <div style={{
-        position: 'relative', border: '1px solid var(--border-gold)', borderRadius: 8, overflow: 'hidden',
-        background: '#0d000b', boxShadow: '0 30px 80px rgba(0,0,0,0.5)',
-      }}>
-        <object data={`${cat.guide}#view=FitH`} type="application/pdf" className="resp-guide-pdf" style={{ width: '100%', height: '82vh', display: 'block' }}>
-          <iframe src={`${cat.guide}#view=FitH`} title={`${cat.name} study guide`} className="resp-guide-pdf" style={{ width: '100%', height: '82vh', border: 'none', display: 'block' }} />
-          <div style={{ padding: '3rem', textAlign: 'center' }}>
-            <p style={{ color: 'var(--gray)', marginBottom: '1.25rem' }}>Your browser can’t display the PDF inline.</p>
-            <a href={cat.guide} target="_blank" rel="noopener noreferrer" style={goldBtn}>Open the study guide ↗</a>
-          </div>
-        </object>
-      </div>
+      {/* Rendered guide */}
+      <article style={{ maxWidth: 720, margin: '0 auto' }}>
+        {grouped.map((b, i) => {
+          if (b.t === 'h') {
+            const isRound = /^round\s*\d+/i.test(b.text)
+            return isRound
+              ? <RoundHeading key={i} text={b.text} />
+              : <SectionHeading key={i} text={b.text} />
+          }
+          if (b.t === 'meta') {
+            return (
+              <p key={i} style={{
+                fontFamily: 'var(--font-heading)', fontSize: '0.62rem', letterSpacing: '0.16em',
+                textTransform: 'uppercase', color: 'var(--gold)', margin: '0 0 1.4rem',
+              }}>{b.text}</p>
+            )
+          }
+          if (b.t === 'ul') {
+            return (
+              <ul key={i} style={{ listStyle: 'none', margin: '0 0 1.6rem', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                {b.items.map((it, j) => (
+                  <li key={j} style={{ position: 'relative', paddingLeft: '1.4rem', color: 'var(--gray)', fontSize: '1rem', lineHeight: 1.7 }}>
+                    <span style={{ position: 'absolute', left: 0, top: '0.55em', width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)' }} />
+                    {linkify(it)}
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+          return (
+            <p key={i} style={{ color: 'var(--gray)', fontSize: '1rem', lineHeight: 1.85, margin: '0 0 1.4rem' }}>
+              {linkify(b.text)}
+            </p>
+          )
+        })}
+      </article>
     </motion.div>
+  )
+}
+
+function RoundHeading({ text }) {
+  return (
+    <div style={{ margin: '3rem 0 1.5rem' }}>
+      <div style={{ width: 48, height: 2, background: 'var(--gold)', marginBottom: '1rem' }} />
+      <h2 style={{
+        fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 4vw, 2.6rem)',
+        letterSpacing: '0.03em', lineHeight: 1, color: 'var(--white)',
+      }}>{text}</h2>
+    </div>
+  )
+}
+
+function SectionHeading({ text }) {
+  return (
+    <h3 style={{
+      fontFamily: 'var(--font-heading)', fontSize: '0.72rem', fontWeight: 700,
+      letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)',
+      margin: '2.2rem 0 1rem',
+    }}>{text}</h3>
   )
 }
 

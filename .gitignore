@@ -15,6 +15,9 @@ dist-ssr
 # Claude Code
 .claude/
 
+# Temp working folder for study-guide downloads/extraction
+.guide-tmp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

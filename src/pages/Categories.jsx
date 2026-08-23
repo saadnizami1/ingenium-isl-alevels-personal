@@ -99,14 +99,14 @@ function CategoryCard({ cat, index }) {
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.55rem' }}>
             <span style={{
               width: 7, height: 7, borderRadius: '50%',
-              background: cat.guide ? 'var(--gold)' : 'rgba(255,255,255,0.28)',
-              boxShadow: cat.guide ? '0 0 10px var(--gold)' : 'none',
+              background: cat.hasGuide ? 'var(--gold)' : 'rgba(255,255,255,0.28)',
+              boxShadow: cat.hasGuide ? '0 0 10px var(--gold)' : 'none',
             }} />
             <span style={{
               fontFamily: 'var(--font-heading)', fontSize: '0.58rem', letterSpacing: '0.16em',
               textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
             }}>
-              {cat.guide ? 'Study guide available' : 'Study guide coming soon'}
+              {cat.hasGuide ? 'Study guide available' : 'Study guide coming soon'}
             </span>
           </span>
           <motion.span
