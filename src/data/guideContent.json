@@ -1160,6 +1160,26 @@
    {
     "t": "li",
     "text": "Microcontrollers other than Arduino."
+   },
+   {
+    "t": "h",
+    "text": "CATEGORY HEAD MODIFICATIONS"
+   },
+   {
+    "t": "li",
+    "text": "Participants must comply with any suggestion, correction, or modification requested by the Category Head regarding their robot's design or construction."
+   },
+   {
+    "t": "li",
+    "text": "A reasonable time allowance will be granted for teams to implement the requested changes."
+   },
+   {
+    "t": "li",
+    "text": "Ingenium will not supply any additional materials, components, or tools for this purpose — teams must use materials they have already brought."
+   },
+   {
+    "t": "li",
+    "text": "Failure to comply with the requested modification within the given time may result in disqualification from that round."
    }
   ]
  },
@@ -1660,6 +1680,82 @@
    {
     "t": "p",
     "text": "Film Duration: 2-5 mins"
+   }
+  ]
+ },
+ "silicon-4d41": {
+  "blocks": [
+   {
+    "t": "h",
+    "text": "INTRODUCTION"
+   },
+   {
+    "t": "p",
+    "text": "This event runs across three non-elimination rounds, with points accumulating throughout. Teams carry their scores forward rather than being knocked out. There is no delegate capacity in this category."
+   },
+   {
+    "t": "h",
+    "text": "Round 1 - Boot sequence (10% weightage)"
+   },
+   {
+    "t": "p",
+    "text": "A 40-question MCQ round covering CS theory, mathematical problem solving, application of math in CS, and everyday CS (10 questions each), pitched at O-level CS and general tech knowledge."
+   },
+   {
+    "t": "h",
+    "text": "Round 2 - Broadcast Protocol (20% weightage)"
+   },
+   {
+    "t": "p",
+    "text": "Teams will create a short video (3-5 minutes) on their research topic. Videos will be screened for fellow delegates, followed by a live Q&A with both the audience and judges."
+   },
+   {
+    "t": "p",
+    "text": "Marking rubric:"
+   },
+   {
+    "t": "li",
+    "text": "50% — Explanation of topic: Clarity, accuracy, and depth in how the concept is explained."
+   },
+   {
+    "t": "li",
+    "text": "30% — Video presentation: Production quality, visual engagement, pacing, and creativity in delivery."
+   },
+   {
+    "t": "li",
+    "text": "20% — Q&A: Team's ability to field questions from both judges and audience, testing genuine understanding beyond the scripted video."
+   },
+   {
+    "t": "p",
+    "text": "Prep strategy: Since explanation quality carries the most weight, focus on making a complex CS/math concept easy to understand, think analogies, visuals, and storytelling."
+   },
+   {
+    "t": "h",
+    "text": "Round 3 - From Zero to Deploy (75% weightage)"
+   },
+   {
+    "t": "p",
+    "text": "Hackathon Round. More details will be shared at the end of Round 2."
+   },
+   {
+    "t": "h",
+    "text": "CATEGORY HEAD MODIFICATIONS"
+   },
+   {
+    "t": "li",
+    "text": "Participants must comply with any suggestion, correction, or modification requested by the Category Head regarding their robot's design or construction."
+   },
+   {
+    "t": "li",
+    "text": "A reasonable time allowance will be granted for teams to implement the requested changes."
+   },
+   {
+    "t": "li",
+    "text": "Ingenium will not supply any additional materials, components, or tools for this purpose — teams must use materials they have already brought."
+   },
+   {
+    "t": "li",
+    "text": "Failure to comply with the requested modification within the given time may result in disqualification from that round."
    }
   ]
  },
