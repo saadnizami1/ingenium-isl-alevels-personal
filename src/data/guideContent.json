@@ -1,4 +1,56 @@
 {
+ "adlers-complex": {
+  "blocks": [
+   {
+    "t": "h",
+    "text": "Round 1 - pysch out"
+   },
+   {
+    "t": "p",
+    "text": "This round will test your knowledge of psychology, quick thinking, and ability to apply what you know in a fastpaced trivia format."
+   },
+   {
+    "t": "p",
+    "text": "Delegates should be prepared to:"
+   },
+   {
+    "t": "li",
+    "text": "Recall key psychological concepts, theories, and terminology."
+   },
+   {
+    "t": "li",
+    "text": "Recognize common psychological phenomena and behaviors."
+   },
+   {
+    "t": "li",
+    "text": "Apply psychological knowledge to short scenarios and examples."
+   },
+   {
+    "t": "li",
+    "text": "Make connections between psychology and biology, behavior, and everyday life."
+   },
+   {
+    "t": "li",
+    "text": "Work quickly and communicate effectively with your team."
+   },
+   {
+    "t": "li",
+    "text": "Think carefully about questions rather than relying purely on memorization."
+   },
+   {
+    "t": "h",
+    "text": "Round 2 - mind games"
+   },
+   {
+    "t": "p",
+    "text": "Delegates will be tested on how well they think on their feet, analyze evidence, apply psychological concepts, and construct persuasive arguments under pressure."
+   },
+   {
+    "t": "p",
+    "text": "In this round, delegates will take on the roles of opposing legal teams in a fictional criminal case involving questions of psychology, mental state, and legal responsibility."
+   }
+  ]
+ },
  "axiom-of-choice": {
   "blocks": [
    {
@@ -1756,6 +1808,134 @@
    {
     "t": "li",
     "text": "Failure to comply with the requested modification within the given time may result in disqualification from that round."
+   }
+  ]
+ },
+ "sputniks-ascent": {
+  "blocks": [
+   {
+    "t": "h",
+    "text": "INTRODUCTION"
+   },
+   {
+    "t": "p",
+    "text": "Here delegates will be stepping into the shoes of aerospace engineers and orbital strategists. Over three highly critical rounds delegates will be navigating the raw physics of space exploration. From mastering celestial mechanics to successfully engineering a spacecraft capable of conquering the final frontier, where only the most precise calculations will survive."
+   },
+   {
+    "t": "h",
+    "text": "Round 1 - COSMIC CAPITAL (THE FUNDING JEOPARDY)"
+   },
+   {
+    "t": "p",
+    "text": "Round 1 is a fast-paced team game formatted like jeopardy, where teams earn their starting budget for the rest of the competition instead of standard points."
+   },
+   {
+    "t": "p",
+    "text": "How It Works: The Board: A grid of astrophysics and space-exploration topics displayed on screen, split into 5 categories with varying difficulty levels:"
+   },
+   {
+    "t": "li",
+    "text": "$100k / $200k: Basic concepts (e.g., solar system facts, gravity basics)."
+   },
+   {
+    "t": "li",
+    "text": "$300k / $400k: Intermediate physics (e.g., Kepler's laws, rocket staging, electromagnetic spectrum)."
+   },
+   {
+    "t": "li",
+    "text": "$500k: Advanced astrophysics & history (e.g., general relativity, specific historical missions, orbital insertion)."
+   },
+   {
+    "t": "p",
+    "text": "Gameplay: Each team gets an initial amount of $1,000k. Next, every team takes turns answering category and point value."
+   },
+   {
+    "t": "p",
+    "text": "Correct Answer: The dollar amount is added directly to the team's bank account. Incorrect Answer: The dollar amount is deducted from their total, creating real tactical risk. The Outcome: At the end of the round, every dollar earned becomes the exact cash balance the team has available to purchase components (thrusters, shields, fuel tanks) in Round 2."
+   },
+   {
+    "t": "h",
+    "text": "Round 2 - AIRCRAFT DEVELOPMENT"
+   },
+   {
+    "t": "p",
+    "text": "In round 2, delegates will design a space aircraft and they will present in an ARSSDC (Asian Regional Space Settlement Design Competition)."
+   },
+   {
+    "t": "p",
+    "text": "Style: Presentation should be in a digital slide deck like a PPT (Power Point)."
+   },
+   {
+    "t": "p",
+    "text": "NOTE: ARSSDC style means you have to present your concepts as a professional engineering proposal. Delegates should be presenting as aerospace contractors or a team of scientists pitching on a serious mission. The tone should be highly professional and technical. Use active, industry-appropriate language."
+   },
+   {
+    "t": "p",
+    "text": "Information delegates should include in their presentation:"
+   },
+   {
+    "t": "li",
+    "text": "Delegates should name their fictional company and the spacecraft and should give a 3 sentence summary of mission goals."
+   },
+   {
+    "t": "li",
+    "text": "Delegates should list every requirement as well."
+   },
+   {
+    "t": "li",
+    "text": "Delegates should show a 3D model or diagram showing the full length, width, mass, and aerodynamic shape of aircraft."
+   },
+   {
+    "t": "li",
+    "text": "Delegates should also mention their radiation shielding and how they are protecting aircraft from radiation and space debris ."
+   },
+   {
+    "t": "li",
+    "text": "Delegates are supposed to tell about propulsion and orbital mechanics, how the craft is getting electricity, how is the aircraft going to communicate through the antenna, and how the aircraft stays at the right temperature. If crewed, detail the flight cockpit and crew seating. If uncrewed, detail the telescopes, sensors, or cameras on board."
+   },
+   {
+    "t": "li",
+    "text": "Delegates should also be well prepared for the emergency and will include the Information about safety protocols."
+   },
+   {
+    "t": "li",
+    "text": "Delegates are supposed to include onboard computing and AI architecture, manufacturing and assembly sequence, cost and mass budget."
+   },
+   {
+    "t": "li",
+    "text": "At last delegates should summarise why your spacecraft design is the safest, most efficient, and most reliable choice for the mission."
+   },
+   {
+    "t": "p",
+    "text": "DELEGATE CHECKLIST: (Applicable for rounds 2 and 3, in round 1-3 delegates will be provided with loose sheets, pens, and graph papers if needed)."
+   },
+   {
+    "t": "p",
+    "text": "Delegates are expected to arrive equipped with:"
+   },
+   {
+    "t": "li",
+    "text": "Fully charged laptops."
+   },
+   {
+    "t": "li",
+    "text": "Chargers."
+   },
+   {
+    "t": "li",
+    "text": "Scientific calculators."
+   },
+   {
+    "t": "li",
+    "text": "Any required presentation or simulation resources. (Delegates are strongly advised to maintain backup copies of their work and presentations)."
+   },
+   {
+    "t": "h",
+    "text": "ROUND 3 - The Element of SUPRISE"
+   },
+   {
+    "t": "p",
+    "text": "Round 3 will introduce an element of surprise designed to test participants’ adaptability, critical thinking, and ability to respond effectively to unfamiliar circumstances. To preserve the integrity and fairness of the round, specific details regarding its format, content, or requirements will not be disclosed in advance. Participants should therefore approach this stage with an open mind and be prepared to apply the knowledge and skills developed throughout the previous rounds. The purpose of this approach is not to create unnecessary difficulty, but to encourage flexibility, independent judgment, and thoughtful decision-making under unexpected conditions. Further Instructions will be provided at the appropriate time."
    }
   ]
  },

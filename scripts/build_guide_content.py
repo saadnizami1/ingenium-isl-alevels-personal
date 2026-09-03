@@ -34,7 +34,8 @@ def is_heading(l):
     if not s:
         return False
     if re.match(r'^round\s*\d+\b', s, re.I):
-        return True
+        # A round title, not a body sentence that merely opens with "Round N ...".
+        return len(s) <= 60 and not s.endswith('.')
     if re.fullmatch(HEAD_KW, s, re.I):
         return True
     letters = re.sub(r'[^A-Za-z]', '', s)
